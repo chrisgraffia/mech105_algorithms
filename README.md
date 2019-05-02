@@ -3,4 +3,4 @@ This repository contains all the algorithms that I created as homework assignmen
 ## Homework Assignments
 In this folder you can find all of the more specific homework assignments I was given throughout the semester. These algorithms were usually given with instructions that were more precise that wanted the code written in more particular ways. The original codes have been slighty adjusted to make more sense for those who did not receive the particular instructions like I did.
 ## Numerical Method Algorithms
-This folder contains the more complex algorithms that took me much more effort and time than those found in the homework assignments folder. The three codes are user-defined functions that are designed to handle any circumstances where the algorithm is applicable.
+This folder contains the more complex algorithms that required much more time and effort than those found in the homework assignments folder. The three codes are user-defined functions that are designed to handle any circumstances where the algorithm is applicable.
