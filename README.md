@@ -1,1 +1,1 @@
-# Numerical-Method-Algorithms
+#mech105_algorithms

@@ -1,8 +1,8 @@
-function [L,U,P] = luFactor(A)
-%Created by Chris Graffia
-    %Mech 105, Dr. Bechara
-    %Code completed Mon, April 1, 2019
-    %Due Wed, April 3, 2019
+function [L,U,P] = lufactor(A)
+%% Summary
+
+%Created by Chris Graffia on March 29, 2019.
+    %Mech 105
 %This function determines the upper triangular matrix and lower triangular
 %matrix of the user-inputed square matrix, while using partial pivoting
 %and keeping track of the pivot matrix. After computing L,U, and P, the
@@ -10,9 +10,8 @@ function [L,U,P] = luFactor(A)
 %of computing L and U, there is some subtractive cancellation errors, which
 %occasionally results in very similar numbers rather than equal numbers.
 
-%%
+%% Error Checks
 
-%User error checks
 if nargin < 1
     fprintf(2,'\nError using luFactor, one square matrix must be input.\n')
     return
@@ -22,13 +21,13 @@ if m ~= n
     fprintf(2,'\nError, input must be a square matrix.\n')
     return
 end
-%%
-%L and U computation
+
+%% Computations
+
 P = eye(size(A));
 U = A;
 L = eye(size(A));
 for i = 1:(n-1)
-
 %Necessary pivots
 pivot = U(i:n,i);
 [~,l] = max(abs(pivot));
@@ -41,16 +40,13 @@ if i > 1
 end
 U(i,:) = U(l+(i-1),:);
 P(i,:) = P(l+(i-1),:);
-
 U(l+(i-1),:) = U1(i,:);
 P(l+(i-1),:) = P1(i,:);
-
 %Upper and lower triangular matrix elements
 for u = (i+1):n
     L(u,i) = U(u,i)/U(i,i);
     U(u,:) = U(u,:)-((U(u,i)/U(i,i))*U(i,:));
 end
-
 end
 
 end
