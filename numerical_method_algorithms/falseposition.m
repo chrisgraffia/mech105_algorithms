@@ -46,7 +46,7 @@ end
 n = 1;
 err = 100;
 %A while loop ensures that the desired error and iterations are met
-while err > es && n <= maxiter
+while err > es && n < maxiter
     %Point-slope formula
     x_r = ((-func(x_l)*(x_u-x_l))/(func(x_u)-func(x_l)))+x_l;
     %if statement to decide if x_r replaces the lower or upper bound
